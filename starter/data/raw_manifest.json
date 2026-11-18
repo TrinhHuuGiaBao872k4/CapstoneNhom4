@@ -1,0 +1,218 @@
+{
+  "repo": "GSA/plainlanguage.gov",
+  "sha": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+  "files": [
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 458
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 1353
+    },
+    {
+      "path": "README.md",
+      "bytes": 4204
+    },
+    {
+      "path": "_pages/guidelines/audience/address-separate-audiences-separately.md",
+      "bytes": 3094
+    },
+    {
+      "path": "_pages/guidelines/audience/address-the-user.md",
+      "bytes": 6186
+    },
+    {
+      "path": "_pages/guidelines/audience/do-your-research.md",
+      "bytes": 1401
+    },
+    {
+      "path": "_pages/guidelines/audience/index.md",
+      "bytes": 2646
+    },
+    {
+      "path": "_pages/guidelines/concise/index.md",
+      "bytes": 4889
+    },
+    {
+      "path": "_pages/guidelines/concise/keep-the-subject-verb-and-object-close-together.md",
+      "bytes": 2942
+    },
+    {
+      "path": "_pages/guidelines/concise/use-positive-language.md",
+      "bytes": 3507
+    },
+    {
+      "path": "_pages/guidelines/concise/write-short-paragraphs.md",
+      "bytes": 6405
+    },
+    {
+      "path": "_pages/guidelines/concise/write-short-sections.md",
+      "bytes": 4000
+    },
+    {
+      "path": "_pages/guidelines/concise/write-short-sentences.md",
+      "bytes": 4065
+    },
+    {
+      "path": "_pages/guidelines/conversational/dont-use-slashes.md",
+      "bytes": 1028
+    },
+    {
+      "path": "_pages/guidelines/conversational/index.md",
+      "bytes": 384
+    },
+    {
+      "path": "_pages/guidelines/conversational/shall-and-must.md",
+      "bytes": 2760
+    },
+    {
+      "path": "_pages/guidelines/conversational/use-active-voice.md",
+      "bytes": 3711
+    },
+    {
+      "path": "_pages/guidelines/conversational/use-contractions.md",
+      "bytes": 1891
+    },
+    {
+      "path": "_pages/guidelines/conversational/use-examples.md",
+      "bytes": 2407
+    },
+    {
+      "path": "_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+      "bytes": 3657
+    },
+    {
+      "path": "_pages/guidelines/conversational/use-the-present-tense.md",
+      "bytes": 1668
+    },
+    {
+      "path": "_pages/guidelines/design/consider-using-visuals.md",
+      "bytes": 1665
+    },
+    {
+      "path": "_pages/guidelines/design/highlight-important-concepts.md",
+      "bytes": 1130
+    },
+    {
+      "path": "_pages/guidelines/design/index.md",
+      "bytes": 3589
+    },
+    {
+      "path": "_pages/guidelines/design/minimize-cross-references.md",
+      "bytes": 9377
+    },
+    {
+      "path": "_pages/guidelines/design/use-tables-to-make-complex-material-easier-to-understand.md",
+      "bytes": 5467
+    },
+    {
+      "path": "_pages/guidelines/index.md",
+      "bytes": 2146
+    },
+    {
+      "path": "_pages/guidelines/organize/add-useful-headings.md",
+      "bytes": 4508
+    },
+    {
+      "path": "_pages/guidelines/organize/effective-headings.md",
+      "bytes": 5406
+    },
+    {
+      "path": "_pages/guidelines/organize/have-a-topic-sentence.md",
+      "bytes": 1497
+    },
+    {
+      "path": "_pages/guidelines/organize/index.md",
+      "bytes": 436
+    },
+    {
+      "path": "_pages/guidelines/organize/make-it-easy-to-follow.md",
+      "bytes": 5025
+    },
+    {
+      "path": "_pages/guidelines/organize/place-the-main-idea-before-exceptions-and-conditions.md",
+      "bytes": 6766
+    },
+    {
+      "path": "_pages/guidelines/organize/use-lists.md",
+      "bytes": 4203
+    },
+    {
+      "path": "_pages/guidelines/organize/use-transition-words.md",
+      "bytes": 2682
+    },
+    {
+      "path": "_pages/guidelines/test/controlled-comparative-studies.md",
+      "bytes": 2761
+    },
+    {
+      "path": "_pages/guidelines/test/index.md",
+      "bytes": 2699
+    },
+    {
+      "path": "_pages/guidelines/test/paraphrase-testing.md",
+      "bytes": 5134
+    },
+    {
+      "path": "_pages/guidelines/test/usability-testing.md",
+      "bytes": 6336
+    },
+    {
+      "path": "_pages/guidelines/web/avoid-faqs.md",
+      "bytes": 3736
+    },
+    {
+      "path": "_pages/guidelines/web/avoid-pdf-overload.md",
+      "bytes": 1330
+    },
+    {
+      "path": "_pages/guidelines/web/index.md",
+      "bytes": 3376
+    },
+    {
+      "path": "_pages/guidelines/web/repurpose-print-material.md",
+      "bytes": 1554
+    },
+    {
+      "path": "_pages/guidelines/web/write-effective-links.md",
+      "bytes": 1867
+    },
+    {
+      "path": "_pages/guidelines/words/avoid-hidden-verbs.md",
+      "bytes": 3323
+    },
+    {
+      "path": "_pages/guidelines/words/avoid-jargon.md",
+      "bytes": 4590
+    },
+    {
+      "path": "_pages/guidelines/words/avoid-noun-strings.md",
+      "bytes": 2217
+    },
+    {
+      "path": "_pages/guidelines/words/index.md",
+      "bytes": 2305
+    },
+    {
+      "path": "_pages/guidelines/words/minimize-abbreviations.md",
+      "bytes": 3467
+    },
+    {
+      "path": "_pages/guidelines/words/minimize-definitions.md",
+      "bytes": 6215
+    },
+    {
+      "path": "_pages/guidelines/words/place-words-carefully.md",
+      "bytes": 2591
+    },
+    {
+      "path": "_pages/guidelines/words/use-simple-words-phrases.md",
+      "bytes": 6204
+    },
+    {
+      "path": "_pages/guidelines/words/use-the-same-terms-consistently.md",
+      "bytes": 847
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# T07 - what you saw in the traces. Replace every TODO (the test refuses a file that still has one).
+# Run first:  python main.py eval v1 ; python main.py eval v2 ; python main.py compare v1 v2
+# Then read one trace file per case:  python main.py trace-show runtime/traces/eval-v2-<case>.json
+#   (the JSON file has the full inputs and outputs of every row: open it in an editor)
+
+[runs]
+v1_command = "TODO the command you ran for v1"
+v2_command = "TODO the command you ran for v2"
+compare_command = "TODO python main.py compare v1 v2"
+
+[lost_fact]
+case = "TODO a dev case id where a v2 attempt lost a fact, e.g. D07"
+trace_file = "TODO runtime/traces/eval-v2-<case>.json"
+fact_lost = "TODO the fact, exactly as in facts_missing"
+round_lost = 0                      # TODO the round (1, 2, ...) whose `check` row lists it in facts_missing
+feedback_that_restored_it = "TODO the exact first feedback line the NEXT `write` row received, starting with FACTS MISSING"
+round_restored = 0                  # TODO the later round whose `check` row no longer lists it

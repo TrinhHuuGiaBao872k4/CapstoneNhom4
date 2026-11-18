@@ -1,0 +1,7 @@
+[
+ {"id": "Q1", "question": "When should I write 'must' instead of 'shall'?", "expect_rule": "conversational/shall-and-must", "expect_any": ["requirement", "obligation"]},
+ {"id": "Q2", "question": "What is a hidden verb?", "expect_rule": "words/avoid-hidden-verbs", "expect_any": ["noun", "nominalization"]},
+ {"id": "Q3", "question": "How do I fix a double negative?", "expect_rule": "concise/use-positive-language", "expect_any": ["positive"]},
+ {"id": "Q4", "question": "Why should a sentence express only one idea?", "expect_rule": "concise/write-short-sentences", "expect_any": ["easier", "smaller", "main point"]},
+ {"id": "Q5", "question": "When is passive voice acceptable?", "expect_rule": "conversational/use-active-voice", "expect_any": ["law", "doesn't matter", "does not matter"]}
+]

@@ -1,0 +1,165 @@
+# Settings of this project. Paths resolve from the project root (the folder of main.py).
+# Every key is checked: a typo stops the program with the list of allowed keys.
+
+[model]
+backend = "local"                  # "local" = Qwen in this process; "server" = the model server; "fake" = no download
+chat_model = "Qwen/Qwen2.5-1.5B-Instruct"
+small_chat_model = "Qwen/Qwen2.5-0.5B-Instruct"   # serve-model --small; for a weak laptop
+embedding_model = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+max_new_tokens = 300
+
+[knowledge]
+collection = "plain-guidelines"
+store = "embedded"                 # "embedded" = open kb_store here; "server" = `chroma run` (shared with Langflow)
+chunk_size = 80                    # words per chunk
+chunk_overlap = 20                 # words repeated from the previous chunk
+top_k = 3
+threshold = 0.25                   # cosine similarity (1 - distance); the retriever drops weaker chunks
+
+[paths]
+root = "."
+data_dir = "data"
+docs_dir = "data/docs"             # the documents `python main.py index` reads (.md, .txt, .json)
+runtime_dir = "runtime"            # traces and checkpoints; safe to delete
+results_dir = "results"            # saved experiments
+kb_dir = "kb_store"                # the Chroma folder: embedded, or `chroma run --path kb_store`
+holdout_dir = "holdout"            # instructor only; absent in the starter
+flows_dir = "flows"                # exported Langflow flow(s)
+my_work_dir = "my_work"            # your notes
+
+[servers]
+model_host = "127.0.0.1"
+model_port = 8000
+chroma_host = "127.0.0.1"
+chroma_port = 8001
+request_timeout = 300.0            # seconds
+langflow_url = "http://127.0.0.1:7860"
+flow_name = "plainedit-rag"       # the name of the flow in Langflow
+
+[tracing]
+project = "plainedit"              # LangSmith project (project-based workspaces)
+tags = ["plainedit"]
+dataset = "plainedit-dataset"     # LangSmith dataset, created once by the cloud experiment
+
+[editor]
+sentence_limit = 25
+target_score = 3
+min_length_ratio = 0.35
+max_length_ratio = 1.3
+max_rounds = 3
+max_findings = 4
+issue_types = ["long_sentence", "passive", "shall", "complex_words", "hidden_verb", "double_negative"]
+w_long_sentence = 2
+w_passive = 2
+w_shall = 2
+w_complex = 1
+w_hidden_verb = 2
+w_double_negative = 2
+abbreviations = [
+    "a.m.",
+    "p.m.",
+    "Mr.",
+    "Ms.",
+    "Mrs.",
+    "Dr.",
+    "St.",
+    "No.",
+    "e.g.",
+    "i.e.",
+]
+be_forms = [
+    "am",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being",
+]
+irregular_participles = [
+    "given",
+    "made",
+    "taken",
+    "done",
+    "sent",
+    "paid",
+    "held",
+    "kept",
+    "known",
+    "shown",
+    "seen",
+    "written",
+    "begun",
+    "built",
+    "chosen",
+    "found",
+    "bought",
+    "set",
+    "put",
+    "withdrawn",
+    "left",
+    "lost",
+    "told",
+    "met",
+    "read",
+    "sold",
+    "understood",
+    "worn",
+    "drawn",
+    "forgotten",
+]
+hidden_verb_patterns = [
+    '\b(?:make|makes|made|making|give|gives|gave|giving|conduct|conducts|conducted|conducting|perform|performs|performed|undertake|carry|carries|carried|provide|provides|provided|providing)\s+(?:out\s+)?(?:a|an|the|any)?\s*(?:\w+\s+)?(?:decision|determination|investigation|inspection|review|assessment|payment|adjustment|consideration|assistance|notification|evaluation|examination|selection|modification)\b',
+]
+double_negative_patterns = [
+    '\b(?:not|no|never|cannot|none)\b[^.;]{0,40}?\b(?:unless|without)\b',
+    '\bnot\s+(?:uncommon|unusual|unreasonabl[ey]|unable|unlikely|unavailable|unpaid|invalid|incomplete|impossible|ineligible|insufficient|inadequate|improper|irrelevant|unnecessary|undue|unauthorized)\b',
+    '\bnot\s+fail(?:s|ed)?\s+to\b',
+]
+injection_patterns = [
+    '\b(?:ignore|disregard|forget)\b.{0,60}\b(?:style guide|guidelines?|instructions?|rules?|above|previous)\b',
+    '^\s*(?:editors?|note to (?:the )?editors?|assistant|ai)\s*:',
+]
+fact_units = [
+    "days",
+    "day",
+    "weeks",
+    "week",
+    "months",
+    "month",
+    "years",
+    "year",
+    "hours",
+    "hour",
+    "minutes",
+    "minute",
+    "business days",
+    "copies",
+    "pages",
+]
+
+[retrieval]
+per_issue_k = 3
+section_long_sentence = "concise"
+query_long_sentence = "write short sentences, one idea per sentence"
+section_passive = "conversational"
+query_passive = "use active voice, say who does what"
+section_shall = "conversational"
+query_shall = "use must instead of shall to indicate requirements"
+section_complex_words = "words"
+query_complex_words = "use simple words and phrases instead of complex ones"
+section_hidden_verb = "words"
+query_hidden_verb = "avoid hidden verbs, use the verb instead of a noun"
+section_double_negative = "concise"
+query_double_negative = "use positive language, avoid negatives and double negatives"
+
+[flow]
+file_name = "plainedit_rag.json"
+k = 3
+max_tokens = 300
+parser_pattern = "[{chunk_id}] {text}"
+system = "You answer questions about the U.S. Federal Plain Language Guidelines. Use only the numbered context. Cite the chunk id in square brackets. If the context does not answer the question, say you cannot find it in the guidelines."
+template = "Context:\n{context}\n\nQuestion: {question}\nAnswer in at most three sentences."
+description = "Ask the guidelines: Chat Input -> embeddings -> Chroma -> parser -> prompt -> model -> Chat Output"
+questions_file = "data/guideline_questions.json"

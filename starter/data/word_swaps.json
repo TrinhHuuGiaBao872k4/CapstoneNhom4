@@ -1,0 +1,567 @@
+[
+ {
+  "complex": "a majority of",
+  "simple": "most",
+  "source": "authored"
+ },
+ {
+  "complex": "additional",
+  "simple": "added",
+  "source": "guideline table"
+ },
+ {
+  "complex": "approximately",
+  "simple": "about",
+  "source": "authored"
+ },
+ {
+  "complex": "ascertain",
+  "simple": "find out",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ascertained",
+  "simple": "find out",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ascertaining",
+  "simple": "find out",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ascertains",
+  "simple": "find out",
+  "source": "guideline table"
+ },
+ {
+  "complex": "assist",
+  "simple": "aid",
+  "source": "guideline table"
+ },
+ {
+  "complex": "assistance",
+  "simple": "aid",
+  "source": "guideline table"
+ },
+ {
+  "complex": "assisted",
+  "simple": "aid",
+  "source": "guideline table"
+ },
+ {
+  "complex": "assisting",
+  "simple": "aid",
+  "source": "guideline table"
+ },
+ {
+  "complex": "assists",
+  "simple": "aid",
+  "source": "guideline table"
+ },
+ {
+  "complex": "at the present time",
+  "simple": "at present",
+  "source": "guideline table"
+ },
+ {
+  "complex": "attempt",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "attempted",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "attempting",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "attempts",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "commence",
+  "simple": "begin",
+  "source": "guideline table"
+ },
+ {
+  "complex": "commenced",
+  "simple": "begin",
+  "source": "guideline table"
+ },
+ {
+  "complex": "commences",
+  "simple": "begin",
+  "source": "guideline table"
+ },
+ {
+  "complex": "commencing",
+  "simple": "begin",
+  "source": "guideline table"
+ },
+ {
+  "complex": "comply with",
+  "simple": "follow",
+  "source": "guideline table"
+ },
+ {
+  "complex": "demonstrate",
+  "simple": "prove",
+  "source": "guideline table"
+ },
+ {
+  "complex": "demonstrated",
+  "simple": "prove",
+  "source": "guideline table"
+ },
+ {
+  "complex": "demonstrates",
+  "simple": "prove",
+  "source": "guideline table"
+ },
+ {
+  "complex": "demonstrating",
+  "simple": "prove",
+  "source": "guideline table"
+ },
+ {
+  "complex": "disclose",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "disclosed",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "discloses",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "disclosing",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "due to the fact that",
+  "simple": "due to",
+  "source": "guideline table"
+ },
+ {
+  "complex": "endeavor",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "endeavored",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "endeavoring",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "endeavors",
+  "simple": "try",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ensure",
+  "simple": "make sure",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ensured",
+  "simple": "make sure",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ensures",
+  "simple": "make sure",
+  "source": "guideline table"
+ },
+ {
+  "complex": "ensuring",
+  "simple": "make sure",
+  "source": "guideline table"
+ },
+ {
+  "complex": "expedite",
+  "simple": "hasten",
+  "source": "guideline table"
+ },
+ {
+  "complex": "expedited",
+  "simple": "hasten",
+  "source": "guideline table"
+ },
+ {
+  "complex": "expedites",
+  "simple": "hasten",
+  "source": "guideline table"
+ },
+ {
+  "complex": "expediting",
+  "simple": "hasten",
+  "source": "guideline table"
+ },
+ {
+  "complex": "expiration",
+  "simple": "end",
+  "source": "guideline table"
+ },
+ {
+  "complex": "facilitate",
+  "simple": "ease",
+  "source": "guideline table"
+ },
+ {
+  "complex": "facilitated",
+  "simple": "ease",
+  "source": "guideline table"
+ },
+ {
+  "complex": "facilitates",
+  "simple": "ease",
+  "source": "guideline table"
+ },
+ {
+  "complex": "facilitating",
+  "simple": "ease",
+  "source": "guideline table"
+ },
+ {
+  "complex": "failed to",
+  "simple": "didn't",
+  "source": "guideline table"
+ },
+ {
+  "complex": "for a period of",
+  "simple": "for",
+  "source": "guideline table"
+ },
+ {
+  "complex": "has a requirement for",
+  "simple": "needs",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in a timely manner",
+  "simple": "on time",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in accordance with",
+  "simple": "by",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in lieu of",
+  "simple": "instead",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in order to",
+  "simple": "to",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in regard to",
+  "simple": "about",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in the amount of",
+  "simple": "for",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in the event of",
+  "simple": "if",
+  "source": "guideline table"
+ },
+ {
+  "complex": "in the event that",
+  "simple": "if",
+  "source": "authored"
+ },
+ {
+  "complex": "indicate",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "indicated",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "indicates",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "indicating",
+  "simple": "show",
+  "source": "guideline table"
+ },
+ {
+  "complex": "initiate",
+  "simple": "start",
+  "source": "guideline table"
+ },
+ {
+  "complex": "initiated",
+  "simple": "start",
+  "source": "guideline table"
+ },
+ {
+  "complex": "initiates",
+  "simple": "start",
+  "source": "guideline table"
+ },
+ {
+  "complex": "initiating",
+  "simple": "start",
+  "source": "guideline table"
+ },
+ {
+  "complex": "modified",
+  "simple": "change",
+  "source": "guideline table"
+ },
+ {
+  "complex": "modifies",
+  "simple": "change",
+  "source": "guideline table"
+ },
+ {
+  "complex": "modify",
+  "simple": "change",
+  "source": "guideline table"
+ },
+ {
+  "complex": "modifying",
+  "simple": "change",
+  "source": "guideline table"
+ },
+ {
+  "complex": "notified",
+  "simple": "let know",
+  "source": "guideline table"
+ },
+ {
+  "complex": "notifies",
+  "simple": "let know",
+  "source": "guideline table"
+ },
+ {
+  "complex": "notify",
+  "simple": "let know",
+  "source": "guideline table"
+ },
+ {
+  "complex": "notifying",
+  "simple": "let know",
+  "source": "guideline table"
+ },
+ {
+  "complex": "numerous",
+  "simple": "many",
+  "source": "guideline table"
+ },
+ {
+  "complex": "obtain",
+  "simple": "get",
+  "source": "authored"
+ },
+ {
+  "complex": "obtained",
+  "simple": "get",
+  "source": "authored"
+ },
+ {
+  "complex": "obtaining",
+  "simple": "get",
+  "source": "authored"
+ },
+ {
+  "complex": "obtains",
+  "simple": "get",
+  "source": "authored"
+ },
+ {
+  "complex": "pertaining to",
+  "simple": "about",
+  "source": "guideline table"
+ },
+ {
+  "complex": "prior to",
+  "simple": "before",
+  "source": "guideline table"
+ },
+ {
+  "complex": "purchase",
+  "simple": "buy",
+  "source": "guideline table"
+ },
+ {
+  "complex": "purchased",
+  "simple": "buy",
+  "source": "guideline table"
+ },
+ {
+  "complex": "purchases",
+  "simple": "buy",
+  "source": "guideline table"
+ },
+ {
+  "complex": "purchasing",
+  "simple": "buy",
+  "source": "guideline table"
+ },
+ {
+  "complex": "pursuant to",
+  "simple": "by",
+  "source": "guideline table"
+ },
+ {
+  "complex": "remuneration",
+  "simple": "pay",
+  "source": "guideline table"
+ },
+ {
+  "complex": "require",
+  "simple": "must",
+  "source": "guideline table"
+ },
+ {
+  "complex": "required",
+  "simple": "must",
+  "source": "guideline table"
+ },
+ {
+  "complex": "requires",
+  "simple": "must",
+  "source": "guideline table"
+ },
+ {
+  "complex": "requiring",
+  "simple": "must",
+  "source": "guideline table"
+ },
+ {
+  "complex": "reside",
+  "simple": "live",
+  "source": "guideline table"
+ },
+ {
+  "complex": "resided",
+  "simple": "live",
+  "source": "guideline table"
+ },
+ {
+  "complex": "resides",
+  "simple": "live",
+  "source": "guideline table"
+ },
+ {
+  "complex": "residing",
+  "simple": "live",
+  "source": "guideline table"
+ },
+ {
+  "complex": "retain",
+  "simple": "keep",
+  "source": "guideline table"
+ },
+ {
+  "complex": "retained",
+  "simple": "keep",
+  "source": "guideline table"
+ },
+ {
+  "complex": "retaining",
+  "simple": "keep",
+  "source": "guideline table"
+ },
+ {
+  "complex": "retains",
+  "simple": "keep",
+  "source": "guideline table"
+ },
+ {
+  "complex": "subsequent",
+  "simple": "later",
+  "source": "guideline table"
+ },
+ {
+  "complex": "subsequent to",
+  "simple": "after",
+  "source": "authored"
+ },
+ {
+  "complex": "sufficient",
+  "simple": "enough",
+  "source": "guideline table"
+ },
+ {
+  "complex": "terminate",
+  "simple": "end",
+  "source": "guideline table"
+ },
+ {
+  "complex": "terminated",
+  "simple": "end",
+  "source": "guideline table"
+ },
+ {
+  "complex": "terminates",
+  "simple": "end",
+  "source": "guideline table"
+ },
+ {
+  "complex": "terminating",
+  "simple": "end",
+  "source": "guideline table"
+ },
+ {
+  "complex": "utilization",
+  "simple": "use",
+  "source": "guideline table"
+ },
+ {
+  "complex": "utilize",
+  "simple": "use",
+  "source": "guideline table"
+ },
+ {
+  "complex": "utilized",
+  "simple": "use",
+  "source": "guideline table"
+ },
+ {
+  "complex": "utilizes",
+  "simple": "use",
+  "source": "guideline table"
+ },
+ {
+  "complex": "utilizing",
+  "simple": "use",
+  "source": "guideline table"
+ },
+ {
+  "complex": "with reference to",
+  "simple": "about",
+  "source": "guideline table"
+ }
+]

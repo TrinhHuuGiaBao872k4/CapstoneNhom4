@@ -1,0 +1,16 @@
+{
+ "flow_name": "plainedit-rag",
+ "file_name": "plainedit_rag.json",
+ "collection": "plain-guidelines",
+ "chroma_host": "127.0.0.1",
+ "chroma_port": 8001,
+ "model_base_url": "http://127.0.0.1:8000/v1",
+ "chat_model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "k": 3,
+ "system": "You answer questions about the U.S. Federal Plain Language Guidelines. Use only the numbered context. Cite the chunk id in square brackets. If the context does not answer the question, say you cannot find it in the guidelines.",
+ "template": "Context:\n{context}\n\nQuestion: {question}\nAnswer in at most three sentences.",
+ "parser_pattern": "[{chunk_id}] {text}",
+ "max_tokens": 300,
+ "description": "Ask the guidelines: Chat Input -> embeddings -> Chroma -> parser -> prompt -> model -> Chat Output"
+}

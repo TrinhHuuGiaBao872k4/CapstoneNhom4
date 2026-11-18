@@ -1,0 +1,13 @@
+# One NEW environment per project:
+#   conda env create -f environment.yml
+#   conda activate cap-plain
+#   pip install -e . --no-deps
+
+name: cap-plain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt
