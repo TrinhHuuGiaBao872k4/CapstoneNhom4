@@ -100,7 +100,47 @@ def build_feedback(
     #     (long sentence, complex word with its simple word, passive, shall, hidden verb, negatives), then the length warning.
     #     The exact line starts are in the tests.
     # CHECK: pytest -k t04 -- test_t04_feedback_*, test_t04_check_node_*, test_t04_the_loop_*.
-    raise NotImplementedError("T04: build_feedback")
+    lines: list[str] = []
+    if missing:
+        lines.append(f"FACTS MISSING, copy them exactly: {'; '.join(missing)}")
+    swap_map: dict[str, str] = {}
+    for row in swaps:
+        vals = list(row.values())
+        if len(vals) >= 2:
+            complex_w = row.get("complex") or row.get("avoid") or row.get("from") or vals[0]
+            simple_w = row.get("simple") or row.get("use") or row.get("to") or vals[1]
+            swap_map[complex_w.lower()] = simple_w
+
+    
+    for q in found.get("long_sentence", [])[:3]:
+        lines.append(f"Sentence too long ({len(q.split())} words, limit {editor.sentence_limit}): {q}")
+
+    for q in found.get("complex_words", [])[:3]:
+        simple = swap_map.get(q.lower(), "")
+        if simple:
+            lines.append(f'Complex word "{q}": write "{simple}"')
+        else:
+            lines.append(f'Complex word "{q}": use a simpler word')
+
+    for q in found.get("passive", [])[:3]:
+        lines.append(f'Passive voice "{q}": rewrite in active voice')
+
+    for q in found.get("shall", [])[:3]:
+        lines.append(f'Avoid shall in "{q}": write "must"')
+
+    for q in found.get("hidden_verb", [])[:3]:
+        lines.append(f'Hidden verb "{q}": use the direct verb')
+
+    for q in found.get("negatives", [])[:3]:
+        lines.append(f'Negative phrasing "{q}": state it positively')
+
+    if ratio < editor.min_length_ratio or ratio > editor.max_length_ratio:
+        lines.append(
+            f"Length is {ratio:.1f} of the original "
+            f"(keep between {editor.min_length_ratio} and {editor.max_length_ratio})"
+        )
+
+    return lines
 
 
 #==========================================================================

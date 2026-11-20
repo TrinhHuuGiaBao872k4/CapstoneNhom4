@@ -60,8 +60,16 @@ def format_guidelines(rules: list[dict[str, Any]], *, words: int = 45) -> str:
     # TODO T01 -- one numbered line per rule: "<n>. <title> (for <issue>): <first `words` words of the text>",
     #     joined with newlines; return "(none)" when the list is empty.
     # CHECK: pytest -k t01 -- test_t01_format_guidelines_numbers_cuts_and_labels.
-    raise NotImplementedError("T01: format_guidelines")
-
+    if not rules:
+        return "(none)"
+    lines = []
+    for i, rule in enumerate(rules, start=1):
+        title = rule.get("title", "")
+        issue = rule.get("issue", "")
+        text = rule.get("text", "")
+        first_words = " ".join(text.split()[:words])
+        lines.append(f"{i}. {title} (for {issue}): {first_words}")
+    return "\n".join(lines)
 
 #==========================================================================
 # The critique chain
@@ -75,7 +83,12 @@ def build_critique_chain(chat: BaseChatModel) -> Runnable:
     Output:
         . chain         : a Runnable; invoke({"guidelines", "issues", "draft"}) -> Critique
     """
+    
     # TODO T01 -- a ChatPromptTemplate from CRITIQUE_SYSTEM (system) and CRITIQUE_HUMAN (human),
     #     piped into chat.with_structured_output(Critique); return the chain.
     # CHECK: pytest -k t01 -- test_t01_critique_chain_returns_a_critique_from_the_fake_model (fake model, no download).
-    raise NotImplementedError("T01: critique chain")
+    prompt = ChatPromptTemplate.from_messages([
+            ("system", CRITIQUE_SYSTEM),
+            ("human", CRITIQUE_HUMAN)
+        ])
+    return prompt | chat.with_structured_output(Critique)

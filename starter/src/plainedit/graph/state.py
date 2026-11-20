@@ -25,7 +25,13 @@ def add_attempts(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> lis
     # TODO T03 -- append the new attempts to the old ones; the rounds must keep rising:
     #     raise ValueError when an attempt's round is not after the last round so far.
     # CHECK: pytest -k t03 -- test_t03_add_attempts_*.
-    raise NotImplementedError("T03: add_attempts")
+    last_round = left[-1]["round"] if left else None
+    for attempt in right:
+        current_round = attempt["round"]
+        if last_round is not None and current_round <= last_round:
+            raise ValueError(f"Attempt round {current_round} must be greater than {last_round}")
+        last_round = current_round
+    return [*left, *right]
 
 
 #==========================================================================
@@ -43,7 +49,7 @@ def add_log(left: list[str], right: list[str]) -> list[str]:
     """
     # TODO T03 -- append the new log lines to the old ones (the log only grows).
     # CHECK: pytest -k t03 -- test_t03_add_log_appends_lines and the two-node graph test.
-    raise NotImplementedError("T03: add_log")
+    return [*left, *right]
 
 
 #==========================================================================

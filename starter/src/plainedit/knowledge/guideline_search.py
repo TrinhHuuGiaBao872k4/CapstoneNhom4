@@ -31,4 +31,30 @@ def find_rules(store: VectorStore, issues: list[str], *, retrieval: RetrievalCon
     #     where={"section": section}); keep one chunk per rule_id across ALL issues (first found wins);
     #     return dicts rule_id, section, title, chunk_id, text, score, issue.
     # CHECK: pytest -k t02 -- the three test_t02_* tests (hashing vectors, no download).
-    raise NotImplementedError("T02: find_rules")
+    seen_rules: set[str] = set()
+    rules: list[dict[str, Any]] = []
+
+    for issue in issues:
+        section, query = retrieval.for_issue(issue)
+        retriever = store.retriever(k=retrieval.per_issue_k, where={"section": section})
+        docs = retriever.invoke(query)
+
+        for doc in docs:
+            meta = doc.metadata
+            rule_id = meta.get("rule_id")
+            if rule_id in seen_rules:
+                continue
+            seen_rules.add(rule_id)
+            rules.append(
+                {
+                    "rule_id": rule_id,
+                    "section": meta.get("section", section),
+                    "title": meta.get("title", ""),
+                    "chunk_id": meta.get("chunk_id", ""),
+                    "text": doc.page_content,
+                    "score": meta.get("score", 0.0),
+                    "issue": issue,
+                }
+            )
+
+    return rules
