@@ -36,7 +36,12 @@ def facts_kept(inputs: dict[str, Any], outputs: dict[str, Any], reference_output
     # TODO T06 -- score 1.0 only when missing_facts(reference_outputs["facts"], outputs["rewrite"]) is empty, else 0.0;
     #     put the missing facts in "comment".
     # CHECK: pytest -k t06 -- test_t06_facts_kept_is_all_or_nothing.
-    raise NotImplementedError("T06: facts_kept")
+    # raise NotImplementedError("T06: facts_kept")
+    missing = missing_facts(reference_outputs["facts"], outputs["rewrite"])
+    return {
+        "score": 0.0 if missing else 1.0,
+        "comment": ", ".join(missing) if missing else "all facts kept",
+    }
 
 
 #==========================================================================
@@ -58,7 +63,16 @@ def issue_score_improved(inputs: dict[str, Any], outputs: dict[str, Any], refere
     # TODO T06 -- score = (before - after) / before from metrics_before / metrics_after issue_score, never below 0.0;
     #     if before is 0: 1.0 when after is 0, else 0.0. comment = "before -> after".
     # CHECK: pytest -k t06 -- test_t06_issue_score_improved_cases.
-    raise NotImplementedError("T06: issue_score_improved")
+    # raise NotImplementedError("T06: issue_score_improved")
+    before = outputs["metrics_before"]["issue_score"]
+    after = outputs["metrics_after"]["issue_score"]
+
+    if before == 0:
+        score = 1.0 if after == 0 else 0.0
+    else:
+        score = max(0.0, min(1.0, (before - after) / before))
+
+    return {"score": score, "comment": f"{before} -> {after}"}
 
 
 #==========================================================================
