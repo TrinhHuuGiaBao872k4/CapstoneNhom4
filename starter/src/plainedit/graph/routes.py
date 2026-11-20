@@ -26,4 +26,8 @@ def after_check(state: EditState, *, max_rounds: int) -> str:
     # TODO T04 -- return "editor_review" when state["passed"]; otherwise "write" while
     #     state["rounds"] < max_rounds, else "pick_best".
     # CHECK: pytest -k t04 -- test_t04_after_check_*.
-    raise NotImplementedError("T04: after_check")
+    if state.get("passed"):
+        return "editor_review"
+    if state.get("rounds", 0) < max_rounds:
+        return "write"
+    return "pick_best"
