@@ -1,17 +1,15 @@
-# T07 - what you saw in the traces. Replace every TODO (the test refuses a file that still has one).
-# Run first:  python main.py eval v1 ; python main.py eval v2 ; python main.py compare v1 v2
-# Then read one trace file per case:  python main.py trace-show runtime/traces/eval-v2-<case>.json
-#   (the JSON file has the full inputs and outputs of every row: open it in an editor)
+# T07 - Evidence from local LangSmith-compatible traces.
+# Commands were run with the real local Qwen model (not the fake backend).
 
 [runs]
-v1_command = "TODO the command you ran for v1"
-v2_command = "TODO the command you ran for v2"
-compare_command = "TODO python main.py compare v1 v2"
+v1_command = "python main.py eval v1"
+v2_command = "python main.py eval v2"
+compare_command = "python main.py compare v1 v2"
 
 [lost_fact]
-case = "TODO a dev case id where a v2 attempt lost a fact, e.g. D07"
-trace_file = "TODO runtime/traces/eval-v2-<case>.json"
-fact_lost = "TODO the fact, exactly as in facts_missing"
-round_lost = 0                      # TODO the round (1, 2, ...) whose `check` row lists it in facts_missing
-feedback_that_restored_it = "TODO the exact first feedback line the NEXT `write` row received, starting with FACTS MISSING"
-round_restored = 0                  # TODO the later round whose `check` row no longer lists it
+case = "D05"
+trace_file = "runtime/traces/eval-v2-D05.json"
+fact_lost = "14 May 2027"
+round_lost = 1
+feedback_that_restored_it = "FACTS MISSING, copy them exactly: 14 May 2027; 2 June 2027"
+round_restored = 2

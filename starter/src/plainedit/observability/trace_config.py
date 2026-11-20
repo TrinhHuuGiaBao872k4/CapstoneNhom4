@@ -76,4 +76,15 @@ def case_config(
     # TODO T07 -- return run_config(...) with the tracer, run_name f"edit-{case_id}", metadata {"version", "case_id", "backend"}
     #     and the version as one extra tag.
     # CHECK: pytest -k t07 -- test_t07_case_config_*.
-    raise NotImplementedError("T07: case_config")
+    # raise NotImplementedError("T07: case_config")
+    return run_config(
+        tracing,
+        tracer=tracer,
+        run_name=f"edit-{case_id}",
+        metadata={
+            "version": version,
+            "case_id": case_id,
+            "backend": backend,
+        },
+        extra_tags=(version,),
+    )
