@@ -96,10 +96,9 @@ def build_feedback(
     Output:
         . lines         : feedback lines; [] when nothing is wrong
     """
-    # TODO T04 -- feedback lines, in this order: FACTS MISSING (the facts joined with '; '), then up to 3 lines per issue type
-    #     (long sentence, complex word with its simple word, passive, shall, hidden verb, negatives), then the length warning.
-    #     The exact line starts are in the tests.
-    # CHECK: pytest -k t04 -- test_t04_feedback_*, test_t04_check_node_*, test_t04_the_loop_*.
+    #----------------------------------------------------------------------
+    # Format missing facts and per-issue feedback lines
+    #----------------------------------------------------------------------
     lines: list[str] = []
     if missing:
         lines.append(f"FACTS MISSING, copy them exactly: {'; '.join(missing)}")
@@ -108,10 +107,9 @@ def build_feedback(
         vals = list(row.values())
         if len(vals) >= 2:
             complex_w = row.get("complex") or row.get("avoid") or row.get("from") or vals[0]
-            simple_w = row.get("simple") or row.get("use") or row.get("to") or vals[1]
+            simple_w  = row.get("simple") or row.get("use") or row.get("to") or vals[1]
             swap_map[complex_w.lower()] = simple_w
 
-    
     for q in found.get("long_sentence", [])[:3]:
         lines.append(f"Sentence too long ({len(q.split())} words, limit {editor.sentence_limit}): {q}")
 

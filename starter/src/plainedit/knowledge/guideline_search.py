@@ -27,11 +27,10 @@ def find_rules(store: VectorStore, issues: list[str], *, retrieval: RetrievalCon
     Output:
         . rules         : dicts rule_id, section, title, chunk_id, text, score, issue; no repeated rule_id
     """
-    # TODO T02 -- for each issue: (section, query) = retrieval.for_issue(issue); search with store.retriever(k=per_issue_k,
-    #     where={"section": section}); keep one chunk per rule_id across ALL issues (first found wins);
-    #     return dicts rule_id, section, title, chunk_id, text, score, issue.
-    # CHECK: pytest -k t02 -- the three test_t02_* tests (hashing vectors, no download).
-    seen_rules: set[str] = set()
+    #----------------------------------------------------------------------
+    # Search each issue's guideline section and deduplicate by rule_id
+    #----------------------------------------------------------------------
+    seen_rules: set[str]       = set()
     rules: list[dict[str, Any]] = []
 
     for issue in issues:

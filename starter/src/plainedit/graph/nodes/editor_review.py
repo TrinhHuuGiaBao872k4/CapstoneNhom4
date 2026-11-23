@@ -63,39 +63,36 @@ def editor_review(state: EditState, *, deps: Deps) -> dict[str, Any]:
     Output:
         . update        : decision, rewrite, status, reason, log
     """
-    # TODO T05 -- decision = interrupt(review_payload(...)); then apply it: approve (refused with needs_editor when a fact is missing),
-    #     edit (the editor's text replaces the rewrite; facts re-checked, shown in the reason), reject (the note is the reason);
-    #     any other action raises ValueError. Return decision, rewrite, status, reason, log.
-    # CHECK: pytest -k t05 -- the test_t05_* tests (the last ones run the whole graph and need T01-T05).
-    # raise NotImplementedError("T05: editor_review")
+    #----------------------------------------------------------------------
+    # Pause for the editor and apply the returned decision
+    #----------------------------------------------------------------------
     decision = interrupt(review_payload(state, deps=deps))
-    action = decision.get("action")
-    rewrite = state["rewrite"]
+    action   = decision.get("action")
+    rewrite  = state["rewrite"]
 
     if action == "approve":
         missing = missing_facts(state["facts"], rewrite)
         if missing:
             status = "needs_editor"
-            reason = f"approval refused: missing facts: {', '.join(missing)}"
+            reason = f"approve refused: missing facts: {', '.join(missing)}"
         else:
             status = "approved"
             reason = "approved by the editor"
 
     elif action == "edit":
-        # Manual edits are accepted, but any missing facts must be reported.
         rewrite = decision.get("text", "")
         missing = missing_facts(state["facts"], rewrite)
-        status = "approved"
-        reason = "edited by the editor"
+        status  = "approved"
+        reason  = "edited by the editor"
         if missing:
-            reason += f"; missing facts: {', '.join(missing)}"
+            reason = f"edited by the editor; facts missing in the edit: {missing}"
 
     elif action == "reject":
         status = "rejected"
         reason = decision.get("note", "")
 
     else:
-        raise ValueError(f"unknown editor action: {action!r}")
+        raise ValueError(f"unknown editor action: {action!r}: expected approve, edit or reject")
 
     return {
         "decision": decision,

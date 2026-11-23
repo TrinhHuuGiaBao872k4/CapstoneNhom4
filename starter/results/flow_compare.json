@@ -1,0 +1,89 @@
+{
+ "backend": "server:Qwen/Qwen2.5-1.5B-Instruct",
+ "rows": [
+  {
+   "id": "Q1",
+   "code_ok": false,
+   "flow_ok": false,
+   "verdict": "neither"
+  },
+  {
+   "id": "Q2",
+   "code_ok": true,
+   "flow_ok": true,
+   "verdict": "both"
+  },
+  {
+   "id": "Q3",
+   "code_ok": true,
+   "flow_ok": true,
+   "verdict": "both"
+  },
+  {
+   "id": "Q4",
+   "code_ok": true,
+   "flow_ok": true,
+   "verdict": "both"
+  },
+  {
+   "id": "Q5",
+   "code_ok": false,
+   "flow_ok": false,
+   "verdict": "neither"
+  }
+ ],
+ "code": [
+  {
+   "question": "When should I write 'must' instead of 'shall'?",
+   "answer": "When you want to clearly communicate that someone has a duty to do something, use \"must\". This avoids ambiguity and makes your language clearer and more accessible to your audience.",
+   "rule_ids": [
+    "conversational/shall-and-must",
+    "conversational/use-must-to-indicate-requirements",
+    "conversational/use-must-to-indicate-requirements"
+   ]
+  },
+  {
+   "question": "What is a hidden verb?",
+   "answer": "A hidden verb, also known as a nominalization, is a verb that has been converted into a noun. This can lead to unclear and verbose language. Examples include \"We are responsible for managing the program\" instead of \"We manage the program,\" which makes the sentence stronger and shorter.",
+   "rule_ids": [
+    "words/avoid-hidden-verbs",
+    "words/avoid-hidden-verbs",
+    "words/avoid-hidden-verbs"
+   ]
+  },
+  {
+   "question": "How do I fix a double negative?",
+   "answer": "To fix a double negative, you can replace one with its positive equivalent. For example, instead of saying \"I don't have enough money\" which contains a double negative (\"don't\" + \"enough\"), you would say \"I lack sufficient funds.\" This makes the statement clearer and easier to understand.",
+   "rule_ids": [
+    "concise/use-positive-language",
+    "concise/use-positive-language",
+    "concise/use-positive-language"
+   ]
+  },
+  {
+   "question": "Why should a sentence express only one idea?",
+   "answer": "A sentence should express only one idea because long, complicated sentences can be confusing and difficult for readers to understand. By breaking down ideas into shorter, simpler sentences, the message becomes clearer and easier to process. This approach helps maintain focus on the main point while allowing for additional details as needed. Additionally, using this method makes it easier for readers to scan through text quickly without getting lost in multiple thoughts within a single sentence.",
+   "rule_ids": [
+    "concise/write-short-sentences",
+    "concise/write-short-sentences",
+    "organize/place-the-main-idea-before-exceptions-and-conditions"
+   ]
+  },
+  {
+   "question": "When is passive voice acceptable?",
+   "answer": "Passive voice can be acceptable when clarity is more important than directness. For example, if you want to avoid responsibility confusion, use passive voice. However, this should be used sparingly and only when necessary.",
+   "rule_ids": [
+    "conversational/use-active-voice",
+    "conversational/use-active-voice",
+    "conversational/use-active-voice"
+   ]
+  }
+ ],
+ "flow": [
+  "When you want to clearly communicate that someone has a duty to do something, use \"must\". This avoids ambiguity and makes your writing clearer and more user-friendly.",
+  "A hidden verb is a verb that has been converted into a noun, often resulting from unnecessary use of passive voice or excessive wordiness. This can weaken the clarity and effectiveness of the writing, making it unnecessarily verbose and less engaging. Hidden verbs should be avoided in favor of stronger, more direct forms of verbs to enhance readability and impact.",
+  "To fix a double negative, you can replace one of the negatives with its positive counterpart. For example, instead of saying \"I don't have enough money\" which contains a double negative (\"don't\" + \"enough\"), you would say \"I lack sufficient funds.\" This makes the statement clearer and easier to understand without changing the meaning.",
+  "A sentence should express only one idea because long, complicated sentences can be confusing and difficult for readers to understand. Shorter sentences are generally easier to process and convey complex information more effectively. Additionally, using shorter sentences helps break down the information into smaller, manageable pieces, making it easier for the audience to follow along.",
+  "Passive voice can be acceptable when clarity is more important than directness. For example, if you want to avoid responsibility confusion, use passive voice. However, this should be used sparingly and only when necessary."
+ ]
+}

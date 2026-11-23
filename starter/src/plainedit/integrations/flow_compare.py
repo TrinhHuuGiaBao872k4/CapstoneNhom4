@@ -28,7 +28,18 @@ def compare_answers(
     Output:
         . rows          : {id, code_ok, flow_ok, verdict} per question
     """
-    # TODO T08 -- for each question (zip the three lists, strict): code_ok / flow_ok = any expect_any word is in the lower-cased answer;
-    #     verdict "both", "code_only", "flow_only" or "neither"; row {id, code_ok, flow_ok, verdict}.
-    # CHECK: pytest -k t08 -- test_t08_compare_answers_*.
-    raise NotImplementedError("T08: compare_answers")
+    rows: list[dict[str, Any]] = []
+    for question, code, flow in zip(questions, code_answers, flow_answers, strict=True):
+        expect  = [word.lower() for word in question["expect_any"]]
+        code_ok = any(word in code.lower() for word in expect)
+        flow_ok = any(word in flow.lower() for word in expect)
+        if code_ok and flow_ok:
+            verdict = "both"
+        elif code_ok:
+            verdict = "code_only"
+        elif flow_ok:
+            verdict = "flow_only"
+        else:
+            verdict = "neither"
+        rows.append({"id": question["id"], "code_ok": code_ok, "flow_ok": flow_ok, "verdict": verdict})
+    return rows

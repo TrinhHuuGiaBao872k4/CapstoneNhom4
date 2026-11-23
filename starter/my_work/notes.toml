@@ -1,5 +1,4 @@
-# T07 - Evidence from local LangSmith-compatible traces.
-# Commands were run with the real local Qwen model (not the fake backend).
+# T07 - what you saw in the traces.
 
 [runs]
 v1_command = "python main.py eval v1"
@@ -7,9 +6,9 @@ v2_command = "python main.py eval v2"
 compare_command = "python main.py compare v1 v2"
 
 [lost_fact]
-case = "D05"
-trace_file = "runtime/traces/eval-v2-D05.json"
-fact_lost = "14 May 2027"
+case = "D03"
+trace_file = "runtime/traces/eval-v2-D03.json"
+fact_lost = "1 June 2027"
 round_lost = 1
-feedback_that_restored_it = "FACTS MISSING, copy them exactly: 14 May 2027; 2 June 2027"
+feedback_that_restored_it = "FACTS MISSING, copy them exactly: 1 June 2027"
 round_restored = 2
